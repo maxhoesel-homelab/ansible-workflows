@@ -38,11 +38,11 @@ jobs:
       - name: Set up Python 3
         uses: actions/setup-python@v4
         with:
-          python-version: "3.8"
+          python-version: "3"
       - name: Set up pip and install tox
         run: |
           pip3 install --upgrade pip
-          pip3 install "tox<3.26,>=3.25"
+          pip3 install "tox>=3,<4"
 
       - name: Build Container
         run: tox -e ${{ inputs.tox_environment }} -- ${{ inputs.tox_posargs }}
